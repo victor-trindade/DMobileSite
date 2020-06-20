@@ -16,16 +16,15 @@ from decouple import config
 
 BASE_DIR = Path(__file__).parents[1]
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!^xffd=a8iroj4#ax#sgppr=nm3a)nmok@f#0&y==lfaqrm(4w'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['trindadewebdev.com.br', 'www.trindadewebdev.com.br']
+ALLOWED_HOSTS = ['trindadewebdev.com.br', 'www.trindadewebdev.com.br', '127.0.0.1']
 
 
 # Application definition
@@ -130,7 +129,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = Path(BASE_DIR1).parents[1].joinpath('www/staticsfiles')
+STATIC_ROOT = Path(BASE_DIR).parents[1].joinpath('www/staticsfiles')
 # STATIC_ROOT = '/home/trindade/www/staticfiles'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
